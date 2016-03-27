@@ -1,0 +1,15 @@
+web:
+  image: exclusivecipher/private
+  links:
+    - db
+    - redis
+  ports:
+    - "80:80"
+db:
+  environment:
+    - MYSQL_ROOT_PASSWORD=testingpasword
+  image: mysql:5.5
+  ports:
+    - "3306"
+redis:
+  image: redis:3-alpine

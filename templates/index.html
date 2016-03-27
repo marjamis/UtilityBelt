@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link  href='../stylesheets/main.css' rel='stylesheet' type='text/css'  >
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/main.js"></script>
+    <title>Testing - Used with docker for other service connections</title>
+</head>
+<body>
+  </br></br>
+  <div ng-app="servicetesting" ng-controller="specifics" id="content">
+    <div class="titlebox">service testing</div>
+    </br></br>
+    <div class="collapse">redis</div>
+    <table>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+      <tr ng-repeat="data in redisData">
+        <td>{{data.key}}</td>
+        <td>{{data.value}}</td>
+        <td><input type="submit" ng-click="removeRedisItem(data.key)" value="Remove this item" /></td>
+      </tr>
+      <tr><td><input type="submit" ng-click="addRedisItem()" value="Add another item" /></td><tr>
+    </table>
+    <div class="collapse">mysql</div>
+</div>
+</body>
+</html>
