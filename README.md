@@ -13,3 +13,4 @@ ToDo:
 - HAProxy infront of applications
 - DNS Records for HAProxy
 - Have the entire environment creation automated
+- add password to the redis connection

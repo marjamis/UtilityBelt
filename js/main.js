@@ -7,12 +7,13 @@ app.controller('specifics', function($scope, $http) {
   });}
 
   $scope.removeRedisItem = function(key) {
-    console.log(key);
+    $http.get("/redis?action=del&key="+key).success(function(data, status, headers, config) { });
     $scope.redisDisplay();
   };
 
-  $scope.addRedisItem = function() {
-
+  $scope.addRedisItem = function(key, value) {
+    $http.get("/redis?action=add&key="+key+"&value="+value).success(function(data, status, headers, config) { });
+    $scope.redisDisplay();
   };
 
   //Initlisation - check if this is standard and OK way to do this.
