@@ -45,7 +45,7 @@ func RedisHandler(w http.ResponseWriter, r *http.Request) {
     for i := 0; i < len(data.Val()); i++ {
       value, err := redisClient.Get((data.Val()[i])).Result()
       if err != nil {
-        http.Error(w, "Error with adding key", http.StatusInternalServerError)
+        http.Error(w, "Error with getting key", http.StatusInternalServerError)
         return
       }
       text = RedisItem{data.Val()[i], value}

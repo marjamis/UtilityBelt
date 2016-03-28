@@ -8,9 +8,10 @@
 <body>
   </br></br>
   <div ng-app="servicetesting" ng-controller="specifics" id="content">
-    <div class="titlebox">service testing</div>
+    <div id="titlebox">service testing</div>
     </br></br>
-    <div class="collapse">redis</div>
+    <div class="subcontent">
+    <div class="subtitlebox">redis</div>
     <table>
       <tr>
         <th>Key</th>
@@ -21,17 +22,13 @@
         <td>{{data.value}}</td>
         <td><input type="submit" ng-click="removeRedisItem(data.key)" value="Remove this item" /></td>
       </tr>
-      <tr>
-        <td>
-          <form>
-            Key: <input type="text" ng-model="newdata.key" />
-            Value: <input type="text" ng-model="newdata.value" />
-            <input type="submit" ng-click="addRedisItem(newdata.key, newdata.value)" value="Add an item" />
-          </form>
-        </td>
-      <tr>
     </table>
-    <div class="collapse">mysql</div>
-</div>
+    <form>
+      Key: <input type="text" ng-model="newdata.key" />
+      Value: <input type="text" ng-model="newdata.value" />
+      <input type="submit" ng-click="addRedisItem(newdata.key, newdata.value)" value="Add an item" />
+    </form>
+  </div>
+  </div>
 </body>
 </html>

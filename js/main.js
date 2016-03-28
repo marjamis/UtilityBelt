@@ -13,9 +13,10 @@ app.controller('specifics', function($scope, $http) {
 
   $scope.addRedisItem = function(key, value) {
     $http.get("/redis?action=add&key="+key+"&value="+value).success(function(data, status, headers, config) { });
+    $scope.newdata.key = ""
+    $scope.newdata.value = ""
     $scope.redisDisplay();
   };
 
-  //Initlisation - check if this is standard and OK way to do this.
   $scope.redisDisplay();
 });
