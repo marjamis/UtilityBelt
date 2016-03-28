@@ -51,6 +51,14 @@ func RedisHandler(w http.ResponseWriter, r *http.Request) {
       text = RedisItem{data.Val()[i], value}
       collection.RedisItems = append(collection.RedisItems, text)
     }
+  js,err := json.Marshal(collection)
+  if err != nil {
+    http.Error(w, err.Error(), http.StatusInternalServerError)
+    return
+  }
+  w.Header().Set("Content-Type", "application/json")
+  fmt.Fprintf(w, "%s", js)
+  return
   } else if action == "add" {
     key := r.URL.Query().Get("key")
     value := r.URL.Query().Get("value")
@@ -70,17 +78,9 @@ func RedisHandler(w http.ResponseWriter, r *http.Request) {
     http.Error(w, "Unknown Error", http.StatusInternalServerError)
     return
   }
+  fmt.Fprintf(w, "")
 
-  js,err := json.Marshal(collection)
-  if err != nil {
-    http.Error(w, err.Error(), http.StatusInternalServerError)
-    return
-  }
-
-  w.Header().Set("Content-Type", "application/json")
-  fmt.Fprintf(w, "%s", js)
   fmt.Printf("redisAction: %s - IP: %s\n", action, r.RemoteAddr)
   redisClient.Close()
   return
 }
-
