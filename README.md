@@ -1,16 +1,10 @@
-#Testing Platform for connections to multiple services when used with docker
+# UtilityBelt
+Testing platform for connections to other services or testing of functionality with an application when used with Docker.
 
 Each service will have the minimum functionality of:
-Add
-Display
-Delete
-and maybe more based on the serivce.
+* Add
+* Display
+* Delete
+and maybe more based on the service.
 
-
-ToDo:
-- When AMZN has docker 1.10 change to compose version 2.
-- Overlay network with consul
-- HAProxy infront of applications
-- DNS Records for HAProxy
-- Have the entire environment creation automated
-- add password to the redis connection
+For details on how to build and run this application can be found in the [Makefile](./Makefile).
