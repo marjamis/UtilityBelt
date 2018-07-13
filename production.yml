@@ -1,1 +1,0 @@
-#For production settings  with compose can be used in conjunction with main stteings to be applied over the original , command: docker-compose -f docker-compoise.yml -f production.yml up

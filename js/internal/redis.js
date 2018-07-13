@@ -1,4 +1,4 @@
-angular.module('servicetesting_redis', [])
+angular.module('utilitybelt_redis', [])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/redis");
@@ -6,7 +6,7 @@ angular.module('servicetesting_redis', [])
   $stateProvider.state('redis', {
     url: '/redis',
     templateUrl: './templates/partials/redis.html',
-    controller: 'redisContr' 
+    controller: 'redisContr'
   });
 })
 

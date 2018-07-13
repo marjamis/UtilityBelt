@@ -1,4 +1,4 @@
-angular.module('servicetesting_mysql', [])
+angular.module('utilitybelt_mysql', [])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/mysql");
@@ -6,7 +6,7 @@ angular.module('servicetesting_mysql', [])
   $stateProvider.state('mysql', {
     url: '/mysql',
     templateUrl: './templates/partials/mysql.html',
-    controller: 'mysqlContr' 
+    controller: 'mysqlContr'
   });
 })
 
