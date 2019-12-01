@@ -5,7 +5,7 @@ angular.module('utilitybelt_redis', [])
 
   $stateProvider.state('redis', {
     url: '/redis',
-    templateUrl: './templates/partials/redis.html',
+    templateUrl: './static/templates/partials/redis.html',
     controller: 'redisContr'
   });
 })
