@@ -1,0 +1,24 @@
+<div class="subcontent">
+  <div class="subtitlebox">redis</div>
+  <br />
+  <table>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+    <tr *ngFor="let data of redisItems">
+      <td>{{data.key}}</td>
+      <td>{{data.value}}</td>
+      <td><button class="delete" title="delete item" (click)="delete(data.key)">X</button></td>
+    </tr>
+  </table>
+  <span>
+    <label>Key:
+      <input #newdatakey />
+    </label>
+    <label>Value:
+      <input #newdatavalue />
+    </label>
+    <button (click)="add(newdatakey.value, newdatavalue.value); newdatakey.value=''; newdatavalue.value='';">Add an item</button>
+  </span>
+</div>
