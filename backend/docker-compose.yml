@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    network_mode: host
+    volumes:
+      - redis-data:/data
+    expose:
+      - 6379
+
+  backend:
+    depends_on:
+      - redis
+    build:
+      context: .
+    container_name: ub_backend
+    restart: always
+    expose:
+      - 8081
+    network_mode: host
+
+volumes:
+  redis-data:
