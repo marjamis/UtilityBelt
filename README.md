@@ -1,4 +1,7 @@
 # UtilityBelt
+
+![UtilityBelt Logo](./imgs/UtilityBeltLogo.png)
+
 Testing platform for connections to other services or testing of functionality with an application when used with Docker.
 
 Each service will have the minimum functionality of:
